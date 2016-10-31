@@ -20,4 +20,9 @@ public class HelloController {
     public String index() {
         return "Ei Bacon welcomes you!";
     }
+
+    @RequestMapping("/test")
+    public String test() {
+        return "Ei Bacon welcomes you again!";
+    }
 }
