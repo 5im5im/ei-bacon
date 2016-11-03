@@ -7,7 +7,7 @@
         <script>
             $(document).ready(function () {
                 $.ajax({
-                    url: "/test"
+                    url: "greeting"
                 }).then(function (data) {
                     $('#local-restlet-test').html("&#x2705; Local Restlet works: " + data.content);
                 });

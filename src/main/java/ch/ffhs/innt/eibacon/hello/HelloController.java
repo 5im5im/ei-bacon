@@ -25,4 +25,9 @@ public class HelloController {
     public String test() {
         return "Ei Bacon welcomes you again!";
     }
+
+    @RequestMapping("/greeting")
+    public Greeting greeting() {
+        return new Greeting(5, "hellö");
+    }
 }
