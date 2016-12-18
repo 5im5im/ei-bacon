@@ -4,35 +4,14 @@
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>
-            $(document).ready(function () {
-                $.ajax({
-                    url: "http://rest-service.guides.spring.io/greeting"
-                }).then(function (data) {
-                    $('#internet-restlet-test').html("&#x2705; Restlet from internet works: " + data.content);
-                });
-            });
-            
-            $(document).ready(function () {
-                $.ajax({
-                    url: "greeting"
-                }).then(function (data) {
-                    $('#local-restlet-test').html("&#x2705; Local Restlet works: " + data.content);
-                });
-            });
-        </script>
     </head>
     <body>
-        <h1>Hello world!</h1>
-
-        <h2>Internet Restlet Test</h2>
-        <div id="internet-restlet-test">
-            &#x274C; Internet Restlet is not working...
+        <div class="menu">
+            <ul>
+                <li><a href="admin">Admin-Bereich</a></li>
+            </ul>
         </div>
 
-        <h2>Local Restlet Test</h2>
-        <div id="local-restlet-test">
-            &#x274C; Local Restlet is not working...
-        </div>
+        <h1>Ei Bacon &#x1F95A; &#x1F953;</h1>
     </body>
 </html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Admin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $.ajax({
+                    url: "http://rest-service.guides.spring.io/greeting"
+                }).then(function (data) {
+                    $('#internet-restlet-test').html("&#x2705; Restlet from internet works: " + data.content);
+                });
+            });
+
+            $(document).ready(function () {
+                $.ajax({
+                    url: "../greeting"
+                }).then(function (data) {
+                    $('#local-restlet-test').html("&#x2705; Local Restlet works: " + data.content);
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="menu">
+            <ul>
+                <li><a href="..">Home</a></li>
+            </ul>
+        </div>
+
+        <h1>Admin-Bereich</h1>
+
+        <h2>Service-&Uuml;bersicht</h2>
+
+        <ul>
+            <li>
+                <b>Local Rest-Test</b>
+                <ul>
+                    <li>
+                        <a href="../greeting">Dummy greeting rest service</a><br />
+                        <span id="local-restlet-test">
+                            &#x274C; Local Restlet is not working...
+                        </span>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <b>Internet Rest-Test</b>
+                <ul>
+                    <li>
+                        <a href="http://rest-service.guides.spring.io/greeting">greeting rest service</a><br />
+                        <span id="internet-restlet-test">
+                            &#x274C; Internet Restlet is not working...
+                        </span>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
