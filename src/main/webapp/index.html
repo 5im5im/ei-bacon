@@ -1,17 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
     <head>
         <title>Start Page</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="menu">
-            <ul>
-                <li><a href="admin">Admin-Bereich</a></li>
-            </ul>
+        <div class="container-fluid bg-1 text-center">
+            <h1>Ei Bacon &#x1F95A; &#x1F953;</h1>
         </div>
 
-        <h1>Ei Bacon &#x1F95A; &#x1F953;</h1>
+        <div class="container-fluid bg-1 text-center">
+            <div class="btn-group-vertical btn-group-lg">
+                <a class="btn btn-primary" href="#">
+                    <span class="glyphicon glyphicon-arrow-up"></span> Einfahrt
+                </a>
+                <button type="button" class="btn btn-primary disabled">
+                    <span class="glyphicon glyphicon-file"></span> Ticket
+                </button>
+                <button type="button" class="btn btn-primary disabled">
+                    <span class="glyphicon glyphicon-arrow-down"></span> Ausfahrt
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-piggy-bank"></span> Konto <span class="label label-default">50 CHF</span>
+                </button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle"
+                            data-toggle="dropdown">
+                        sonstiges <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <!--li>
+                            <a href="#">
+                                <span class="glyphicon glyphicon-cog"></span> Einstellungen
+                            </a>
+                        </li-->
+                        <li>
+                            <a href="admin">
+                                <span class="glyphicon glyphicon-scale"></span> Admin-Bereich
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
