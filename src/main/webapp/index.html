@@ -7,43 +7,48 @@
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
         <!-- jQuery library -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- Angular JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <!-- Angular Routing -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        
+        <script src="RouteProvider.js"></script>
+
     </head>
-    <body>
+    <body ng-app="myApp">
         <div class="container-fluid bg-1 text-center">
             <h1>Ei Bacon &#x1F95A; &#x1F953;</h1>
         </div>
 
         <div class="container-fluid bg-1 text-center">
             <div class="btn-group-vertical btn-group-lg">
-                <a class="btn btn-primary" href="#">
+                <a class="btn btn-primary" href="#/einfahrt">
                     <span class="glyphicon glyphicon-arrow-up"></span> Einfahrt
                 </a>
-                <button type="button" class="btn btn-primary disabled">
+                <a class="btn btn-primary" href="#/ticket">
                     <span class="glyphicon glyphicon-file"></span> Ticket
-                </button>
-                <button type="button" class="btn btn-primary disabled">
+                </a>
+                <a class="btn btn-primary" href="#/ausfahrt">
                     <span class="glyphicon glyphicon-arrow-down"></span> Ausfahrt
-                </button>
-                <button type="button" class="btn btn-primary">
+                </a>
+                <a class="btn btn-primary" href="#/account">
                     <span class="glyphicon glyphicon-piggy-bank"></span> Konto <span class="label label-default">50 CHF</span>
-                </button>
+                </a>
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle"
                             data-toggle="dropdown">
                         sonstiges <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu">
-                        <!--li>
-                            <a href="#">
-                                <span class="glyphicon glyphicon-cog"></span> Einstellungen
-                            </a>
-                        </li-->
                         <li>
-                            <a href="admin">
+                            <a href="#/admin">
                                 <span class="glyphicon glyphicon-scale"></span> Admin-Bereich
                             </a>
                         </li>
@@ -51,5 +56,10 @@
                 </div>
             </div>
         </div>
+
+        <div class="container-fluid bg-1 text-center">
+            <div ng-view></div>
+        </div>
+        
     </body>
 </html>
