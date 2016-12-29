@@ -1,1 +1,42 @@
 <h2>Einfahrt</h2>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('einfahrtCtrl', function ($scope, $http) {
+        $http({
+            method: 'GET',
+            url: 'parkingService/startParking',
+            params: {
+                beaconId: beaconId,
+                accountId: accountId
+            }
+        }).then(function (response) {
+            $scope.ticket = response.data;
+        });
+</script>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="iBeacon" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
+        <div class="col-sm-9">
+            <select id="iBeacon" ng-model="beaconId" ng-init="beaconId = 'eingang1'" class="form-control">
+                <option value="eingang1">Eingangsschranke 1</option>
+                <option value="eingang2">Eingangsschranke 2</option>
+                <option value="ausgang1">Ausgangschranke 1</option>
+                <option value="ausgang2">Ausgangsschranke 2</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="account" class="control-label col-sm-3">Account</label>
+        <div class="col-sm-9">
+            <select id="account" ng-model="accountId" ng-init="accountId = '1'" class="form-control">
+                <option value="0">Benutzer 0</option>
+                <option value="1">Benutzer 1</option>
+                <option value="2">Benutzer 2</option>
+                <option value="3">Benutzer 3</option>
+            </select>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
