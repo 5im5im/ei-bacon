@@ -26,12 +26,12 @@ public class ParkingServiceRestlet {
 
     @RequestMapping("/startParking")
     public Ticket startParking(String beaconId, int accountId) {
-        return parkingService.startParking(beaconId, 0);
+        return parkingService.startParking(beaconId, accountId);
     }
 
     @RequestMapping("/endParking")
     public Ticket endParking(String beaconId, int ticketId) {
-        return parkingService.endParking(beaconId, 0);
+        return parkingService.endParking(beaconId, ticketId);
     }
 
     @RequestMapping("/verifyTicketPayment")
