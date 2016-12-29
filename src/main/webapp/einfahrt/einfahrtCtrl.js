@@ -1,12 +1,13 @@
 app.controller('einfahrtCtrl', function ($scope, $http) {
     $scope.startParking = function () {
         $http({
-            method: 'POST',
+            method: 'GET',
             url: 'parkingService/startParking',
-            data: {
-                beaconId: $scope.beaconId,
-                accountId: $scope.accountId
-            }
+            params: {
+                "beaconId": $scope.beaconId,
+                "accountId": $scope.accountId
+            }//,
+           // headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function onSuccess(response) {
             $scope.ticket = response.data;
 
@@ -14,6 +15,7 @@ app.controller('einfahrtCtrl', function ($scope, $http) {
             $scope.statuscode = response.status;
             $scope.statustext = response.statustext;
         }, function onError(response) {
+            console.log($scope.beaconId + " " + $scope.accountId);
             $scope.error = response.statusText;
 
             $scope.content = response.data;
