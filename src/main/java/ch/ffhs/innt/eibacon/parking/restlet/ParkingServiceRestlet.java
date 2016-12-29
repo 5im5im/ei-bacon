@@ -9,6 +9,7 @@ import ch.ffhs.innt.eibacon.parking.model.Ticket;
 import ch.ffhs.innt.eibacon.parking.service.ParkingService;
 import javax.inject.Inject;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Simon
  */
 @RestController
-@RequestMapping(value = "/parkingService", produces = "application/json")
+@RequestMapping(value = "/parkingService", produces = "application/json", method = RequestMethod.POST)
 public class ParkingServiceRestlet {
 
     @Inject
@@ -37,5 +38,4 @@ public class ParkingServiceRestlet {
     public boolean verifyTicketPayment(int ticketId) {
         return parkingService.verifyTicketPayment(ticketId);
     }
-
 }
