@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Simon
  */
 @RestController
-@RequestMapping(value = "/parkingService", produces = "application/json", method = RequestMethod.GET)
+@RequestMapping(value = "/parkingService", produces = "application/json", method = RequestMethod.POST)
 public class ParkingServiceRestlet {
 
     @Inject

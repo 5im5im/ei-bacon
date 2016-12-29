@@ -1,13 +1,8 @@
 <h2>Einfahrt</h2>
 <form class="form-horizontal" ng-controller="einfahrtCtrl">
-    <div>
-        <b>Content:</b> {{content}}<br>
-        <b>Code:</b> {{statuscode}}<br>
-        <b>Text:</b> {{statustext}}
-    </div>
-    <div>
-        <b>beaconId:</b> {{beaconId}}<br>
-        <b>accountId:</b> {{accountId}}
+
+    <div class="container-fluid bg-1 text-center alert alert-danger" ng-show="errMsg">
+        {{errMsg}}
     </div>
 
     <div class="form-group">
@@ -16,8 +11,6 @@
             <select id="iBeacon" ng-model="beaconId" ng-init="beaconId = 'eingang1'" class="form-control">
                 <option value="eingang1">Eingangsschranke 1</option>
                 <option value="eingang2">Eingangsschranke 2</option>
-                <!--option value="ausgang1">Ausgangschranke 1</option>
-                <option value="ausgang2">Ausgangsschranke 2</option-->
             </select>
         </div>
     </div>
