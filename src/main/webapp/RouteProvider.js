@@ -19,6 +19,6 @@ app.config(function ($routeProvider) {
                 templateUrl: "admin/index.html"
             })
             .otherwise({
-                template: "<h2>Error 404</h2><p>Seite nicht gefunden.</p>"
+                redirectTo: "/"
             });
 });
