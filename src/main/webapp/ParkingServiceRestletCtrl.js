@@ -11,10 +11,10 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
         }).then(function onSuccess(response) {
             $scope.ticket = response.data;
         }, function onError(response) {
-            console.log(response.status)
-            console.log(response.data)
-            console.log("entryBeaconId" + $scope.entryBeaconId)
-            console.log("accountId" + $scope.accountId)
+            console.log(response.status);
+            console.log(response.data);
+            console.log("entryBeaconId=" + $scope.entryBeaconId);
+            console.log("accountId=" + $scope.accountId);
             $scope.errMsg = "parkingService/startParking failed with status " + response.status;
         });
     };
@@ -31,10 +31,10 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
         }).then(function onSuccess(response) {
             $scope.ticket = response.data;
         }, function onError(response) {
-            console.log(response.status)
-            console.log(response.data)
-            console.log("exitBeaconId" + $scope.exitBeaconId)
-            console.log("ticketId" + $scope.ticketId)
+            console.log(response.status);
+            console.log(response.data);
+            console.log("exitBeaconId=" + $scope.exitBeaconId);
+            console.log("ticketId=" + $scope.ticketId);
             $scope.errMsg = "parkingService/endParking failed with status " + response.status;
         });
     };
