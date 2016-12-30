@@ -32,8 +32,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#/parking">Parkieren</a></li>
                     <li>
-                        <a href="#/account">
-                            <span class="glyphicon glyphicon-piggy-bank"></span> Konto <span class="label label-default">50 CHF</span>
+                        <a href="#/account" ng-init="user.saldo = 50">
+                            <span class="glyphicon glyphicon-piggy-bank"></span> Konto <span class="label label-default">{{user.saldo| currency : 'CHF ' : 2}}</span>
                         </a>
                     </li>
                     <li class="dropdown">
