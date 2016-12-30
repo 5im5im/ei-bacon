@@ -1,34 +1,13 @@
-<h2>Ausfahrt</h2>
-<form class="form-horizontal" ng-controller="parkingServiceRestletCtrl">
-
-    <div class="container-fluid bg-1 text-center alert alert-danger" ng-show="errMsg">
-        {{errMsg}}
-    </div>
-
+<h3>Ausfahrt</h3>
+<form class="form-horizontal">
     <div class="form-group">
-        <label for="entryBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
+        <label for="exitBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
         <div class="col-sm-9">
-            <select id="entryBeaconId" ng-model="exitBeaconId" ng-init="exitBeaconId = 'ausgangA'" class="form-control">
+            <select id="exitBeaconId" ng-model="exitBeaconId" ng-init="exitBeaconId = 'ausgangA'" class="form-control">
                 <option value="ausgangA">Ausgangsschranke A</option>
                 <option value="ausgangB">Ausgangsschranke B</option>
             </select>
         </div>
     </div>
-
-    <div class="form-group">
-        <label for="ticketId" class="control-label col-sm-3">Account</label>
-        <div class="col-sm-9">
-            <select id="ticketId" ng-model="ticketId" ng-init="ticketId = '0'" class="form-control">
-                <option value="0">Ticket 0</option>
-                <option value="1">Ticket 1</option>
-                <option value="2">Ticket 2</option>
-                <option value="3">Ticket 3</option>
-            </select>
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-default" ng-click="endParking(entryBeaconId, ticketId)">Ausfahrt</button>
-
-    <br><br>
-    {{ticket}}
+    <button type="submit" class="btn btn-default" ng-click="endParking(exitBeaconId, ticket.id)">Ausfahrt</button>
 </form>

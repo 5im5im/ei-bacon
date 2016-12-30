@@ -1,1 +1,15 @@
-<h2>Willkommen</h2>
+<h2>Ticket-Prozess</h2>
+<div ng-controller="parkingServiceRestletCtrl">
+    <div class="container-fluid bg-1 text-center alert alert-danger" ng-show="errMsg">
+        {{errMsg}}
+    </div>
+
+    <!-- Einfahrt -->
+    <div ng-include src="'einfahrt/einfahrt.html'" ng-hide="ticket"></div>
+
+    <!-- Ausfahrt -->
+    <div ng-include src="'ausfahrt/ausfahrt.html'" ng-show="ticket && !ticket.parkingEndedAt"></div>
+
+    <!-- Ticket -->
+    <div ng-include src="'ticket/ticket.html'" ng-show="ticket"></div>
+</div>
