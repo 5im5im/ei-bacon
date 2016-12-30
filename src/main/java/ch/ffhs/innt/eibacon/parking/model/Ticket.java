@@ -44,4 +44,6 @@ public class Ticket {
      * Beacon Token ID from the exit barrier.
      */
     private String exitBeaconId;
+
+    private float parkingFee;
 }
