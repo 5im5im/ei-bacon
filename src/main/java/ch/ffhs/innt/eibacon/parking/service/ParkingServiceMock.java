@@ -21,24 +21,24 @@ import org.springframework.stereotype.Service;
 @Service
 public class ParkingServiceMock implements ParkingService {
 
-    private List<Ticket> tickets = new ArrayList<>();
+    private static List<Ticket> TICKETS = new ArrayList<>();
 
     @Override
     public Ticket startParking(String beaconId, int accountId) {
         Ticket ticket = new Ticket();
-        ticket.setId(tickets.size());
+        ticket.setId(TICKETS.size());
         ticket.setParkingName("Mock car park");
         ticket.setEntryBeaconId(beaconId);
         ticket.setParkingStartedAt(new Date());
         ticket.setAccountId(accountId);
 
-        tickets.add(ticket);
+        TICKETS.add(ticket);
         return ticket;
     }
 
     @Override
     public Ticket endParking(String beaconId, int ticketId) {
-        List<Ticket> matchingTickets = tickets.stream().filter(ticket -> ticket.getId() == ticketId).collect(Collectors.toList());
+        List<Ticket> matchingTickets = TICKETS.stream().filter(ticket -> ticket.getId() == ticketId).collect(Collectors.toList());
         if (CollectionUtils.isNotEmpty(matchingTickets) && matchingTickets.size() == 1) {
             Ticket ticket = matchingTickets.get(0);
             ticket.setExitBeaconId(beaconId);
