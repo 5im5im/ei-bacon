@@ -32,6 +32,7 @@ public class ParkingServiceMock implements ParkingService {
         ticket.setEntryBeaconId(beaconId);
         ticket.setParkingStartedAt(new Date());
         ticket.setAccountId(accountId);
+        ticket.setCompleted(false);
 
         TICKETS.add(ticket);
         return ticket;
@@ -39,21 +40,27 @@ public class ParkingServiceMock implements ParkingService {
 
     @Override
     public Ticket endParking(String beaconId, int ticketId) {
+        Ticket ticket = findTicket(ticketId);
+        ticket.setExitBeaconId(beaconId);
+        ticket.setParkingEndedAt(new Date());
+        ticket.setParkingFee(calculatePrice(ticket));
+        return ticket;
+    }
+
+    private Ticket findTicket(int ticketId) {
         List<Ticket> matchingTickets = TICKETS.stream().filter(ticket -> ticket.getId() == ticketId).collect(Collectors.toList());
         if (CollectionUtils.isNotEmpty(matchingTickets) && matchingTickets.size() == 1) {
-            Ticket ticket = matchingTickets.get(0);
-            ticket.setExitBeaconId(beaconId);
-            ticket.setParkingEndedAt(new Date());
-            ticket.setParkingFee(calculatePrice(ticket));
-            return ticket;
+            return matchingTickets.get(0);
         } else {
             throw new IllegalArgumentException("No valid ticket with id " + ticketId + " found!");
         }
     }
 
     @Override
-    public boolean verifyTicketPayment(int ticketId) {
-        return true;
+    public Ticket verifyTicketPayment(int ticketId) {
+        Ticket ticket = findTicket(ticketId);
+        ticket.setCompleted(true);
+        return ticket;
     }
 
     private float calculatePrice(Ticket ticket) {

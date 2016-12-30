@@ -35,7 +35,7 @@ public class ParkingServiceRestlet {
     }
 
     @RequestMapping("/verifyTicketPayment")
-    public boolean verifyTicketPayment(int ticketId) {
+    public Ticket verifyTicketPayment(int ticketId) {
         return parkingService.verifyTicketPayment(ticketId);
     }
 }

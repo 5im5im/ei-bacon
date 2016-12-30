@@ -1,0 +1,20 @@
+<form class="form-horizontal">
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 well" ng-hide="ticket.completed">
+            <h3>Zahlung</h3>
+            <button type="submit"
+                    class="btn btn-warning"
+                    ng-click="verifyTicketPayment(ticket.id)">
+                {{ticket.parkingFee| currency : 'CHF ' : 2}} bezahlen
+            </button>
+        </div>
+
+        <div class="col-sm-4" ng-show="ticket.completed">
+            <div class="panel panel-success">
+                <div class="panel-heading">Wir wünschen eine <b>gute Weiterfahrt</b>!</div>
+            </div>
+        </div>
+        <div class="col-sm-4"></div>
+    </div>
+</form>

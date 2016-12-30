@@ -46,4 +46,9 @@ public class Ticket {
     private String exitBeaconId;
 
     private float parkingFee;
+
+    /**
+     * After the ticket is paid, the ticket is completed.
+     */
+    private boolean isCompleted = false;
 }

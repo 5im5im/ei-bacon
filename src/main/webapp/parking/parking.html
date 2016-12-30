@@ -1,0 +1,18 @@
+<h2>Parkieren</h2>
+<div ng-controller="parkingServiceRestletCtrl">
+    <div class="container-fluid bg-1 text-center alert alert-danger" ng-show="errMsg">
+        {{errMsg}}
+    </div>
+
+    <!-- Einfahrt -->
+    <div ng-include src="'parking/einfahrt/einfahrt.html'" ng-hide="ticket"></div>
+
+    <!-- Ausfahrt -->
+    <div ng-include src="'parking/ausfahrt/ausfahrt.html'" ng-show="ticket && !ticket.parkingEndedAt"></div>
+
+    <!-- payment -->
+    <div ng-include src="'parking/payment/payment.html'" ng-show="ticket && ticket.parkingFee"></div>
+    
+    <!-- ticket -->
+    <div ng-include src="'parking/ticket/ticket.html'" ng-show="ticket"></div>
+</div>

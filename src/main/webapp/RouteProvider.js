@@ -1,16 +1,16 @@
 app.config(function ($routeProvider) {
     $routeProvider
             .when("/", {
-                templateUrl: "main/main.html"
+                templateUrl: "parking/parking.html"
             })
             .when("/einfahrt", {
-                templateUrl: "einfahrt/einfahrt.html"
+                templateUrl: "parking/einfahrt/einfahrt.html"
             })
             .when("/ticket", {
-                templateUrl: "ticket/ticket.html"
+                templateUrl: "parking/ticket/ticket.html"
             })
             .when("/ausfahrt", {
-                templateUrl: "ausfahrt/ausfahrt.html"
+                templateUrl: "parking/ausfahrt/ausfahrt.html"
             })
             .when("/account", {
                 templateUrl: "account/account.html"

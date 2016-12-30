@@ -17,7 +17,8 @@ public interface ParkingService {
     /**
      * When the car will enter the car park to open the barrier.
      *
-     * @param entryBeaconId iBeacon ID of the terminal for entering the car park.
+     * @param entryBeaconId iBeacon ID of the terminal for entering the car
+     * park.
      * @param accountId ID of the car owner's account.
      * @return Ticket
      */
@@ -38,5 +39,5 @@ public interface ParkingService {
      * @return <code>true</code> if the payment was successful,
      * <code>false</code> otherwise.
      */
-    public boolean verifyTicketPayment(int ticketId);
+    public Ticket verifyTicketPayment(int ticketId);
 }
