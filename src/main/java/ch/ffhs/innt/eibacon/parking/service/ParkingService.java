@@ -17,19 +17,19 @@ public interface ParkingService {
     /**
      * When the car will enter the car park to open the barrier.
      *
-     * @param beaconId iBeacon ID of the terminal for entering the car park.
+     * @param entryBeaconId iBeacon ID of the terminal for entering the car park.
      * @param accountId ID of the car owner's account.
      * @return Ticket
      */
-    public Ticket startParking(String beaconId, int accountId);
+    public Ticket startParking(String entryBeaconId, int accountId);
 
     /**
      *
-     * @param beaconId iBeacon ID of the terminal for leaving the car park.
+     * @param exitBeaconId iBeacon ID of the terminal for leaving the car park.
      * @param ticketId
      * @return Ticket
      */
-    public Ticket endParking(String beaconId, int ticketId);
+    public Ticket endParking(String exitBeaconId, int ticketId);
 
     /**
      * Verify if the ticket was payed to open the barrier.

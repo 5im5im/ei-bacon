@@ -4,7 +4,7 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
             method: 'POST',
             url: 'parkingService/startParking',
             params: {
-                "beaconId": $scope.beaconId,
+                "entryBeaconId": $scope.beaconId,
                 "accountId": $scope.accountId
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -24,7 +24,7 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
             method: 'POST',
             url: 'parkingService/endParking',
             params: {
-                "beaconId": $scope.beaconId,
+                "exitBeaconId": $scope.beaconId,
                 "ticketId": $scope.ticketId
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}

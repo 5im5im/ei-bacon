@@ -6,9 +6,9 @@
     </div>
 
     <div class="form-group">
-        <label for="iBeacon" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
+        <label for="entryBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
         <div class="col-sm-9">
-            <select id="iBeacon" ng-model="beaconId" ng-init="beaconId = 'ausgangA'" class="form-control">
+            <select id="entryBeaconId" ng-model="exitBeaconId" ng-init="exitBeaconId = 'ausgangA'" class="form-control">
                 <option value="ausgangA">Ausgangsschranke A</option>
                 <option value="ausgangB">Ausgangsschranke B</option>
             </select>
@@ -16,9 +16,9 @@
     </div>
 
     <div class="form-group">
-        <label for="account" class="control-label col-sm-3">Account</label>
+        <label for="accountId" class="control-label col-sm-3">Account</label>
         <div class="col-sm-9">
-            <select id="account" ng-model="ticketId" ng-init="ticketId = '0'" class="form-control">
+            <select id="accountId" ng-model="ticketId" ng-init="ticketId = '0'" class="form-control">
                 <option value="0">Ticket 0</option>
                 <option value="1">Ticket 1</option>
                 <option value="2">Ticket 2</option>
