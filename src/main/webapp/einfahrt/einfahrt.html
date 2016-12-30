@@ -1,26 +1,32 @@
 <h3>Einfahrt</h3>
 <form class="form-horizontal" ng-hide="ticket">
-    <div class="form-group">
-        <label for="account" class="control-label col-sm-3">Account</label>
-        <div class="col-sm-9">
-            <select id="account" ng-model="accountId" ng-init="accountId = '1'" class="form-control">
-                <option value="0">Benutzer 0</option>
-                <option value="1">Benutzer 1</option>
-                <option value="2">Benutzer 2</option>
-                <option value="3">Benutzer 3</option>
-            </select>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-default" ng-click="startParking(entryBeaconId, accountId)">"Scan iBeacon bei Einfahrt"</button>
+        </div>
+        <div class="col-sm-4 text-left">
+            <div class="form-group">
+                <label for="account" class="control-label col-sm-3">Account</label>
+                <div class="col-sm-9">
+                    <select id="account" ng-model="accountId" ng-init="accountId = '1'" class="form-control">
+                        <option value="0">Benutzer 0</option>
+                        <option value="1">Benutzer 1</option>
+                        <option value="2">Benutzer 2</option>
+                        <option value="3">Benutzer 3</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="entryBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
+                <div class="col-sm-9">
+                    <select id="entryBeaconId" ng-model="entryBeaconId" ng-init="entryBeaconId = 'eingang1'" class="form-control">
+                        <option value="eingang1">Eingangsschranke 1</option>
+                        <option value="eingang2">Eingangsschranke 2</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
-
-    <div class="form-group">
-        <label for="entryBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
-        <div class="col-sm-9">
-            <select id="entryBeaconId" ng-model="entryBeaconId" ng-init="entryBeaconId = 'eingang1'" class="form-control">
-                <option value="eingang1">Eingangsschranke 1</option>
-                <option value="eingang2">Eingangsschranke 2</option>
-            </select>
-        </div>
-    </div>
-
-    <button type="submit" class="btn btn-default" ng-click="startParking(entryBeaconId, accountId)">"Scan iBeacon bei Einfahrt"</button>
 </form>

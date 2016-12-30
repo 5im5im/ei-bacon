@@ -1,13 +1,20 @@
 <h3>Ausfahrt</h3>
 <form class="form-horizontal">
-    <div class="form-group">
-        <label for="exitBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
-        <div class="col-sm-9">
-            <select id="exitBeaconId" ng-model="exitBeaconId" ng-init="exitBeaconId = 'ausgangA'" class="form-control">
-                <option value="ausgangA">Ausgangsschranke A</option>
-                <option value="ausgangB">Ausgangsschranke B</option>
-            </select>
+    <div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+            <button type="submit" class="btn btn-default" ng-click="endParking(exitBeaconId, ticket.id)">"Scan iBeacon bei Ausfahrt"</button>
+        </div>
+        <div class="col-sm-4 text-left">
+            <div class="form-group">
+                <label for="exitBeaconId" class="control-label col-sm-3">Schranke (iBeacon Terminal)</label>
+                <div class="col-sm-9">
+                    <select id="exitBeaconId" ng-model="exitBeaconId" ng-init="exitBeaconId = 'ausgangA'" class="form-control">
+                        <option value="ausgangA">Ausgangsschranke A</option>
+                        <option value="ausgangB">Ausgangsschranke B</option>
+                    </select>
+                </div>
+            </div>
         </div>
     </div>
-    <button type="submit" class="btn btn-default" ng-click="endParking(exitBeaconId, ticket.id)">"Scan iBeacon bei Ausfahrt"</button>
 </form>
