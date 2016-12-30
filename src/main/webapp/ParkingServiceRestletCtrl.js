@@ -1,11 +1,11 @@
 app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
-    $scope.startParking = function () {
+    $scope.startParking = function (entryBeaconId, accountId) {
         $http({
             method: 'POST',
             url: 'parkingService/startParking',
             params: {
-                "entryBeaconId": $scope.entryBeaconId,
-                "accountId": $scope.accountId
+                "entryBeaconId": entryBeaconId,
+                "accountId": accountId
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function onSuccess(response) {
@@ -13,18 +13,18 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
         }, function onError(response) {
             console.log(response.status);
             console.log(response.data);
-            console.log("entryBeaconId=" + $scope.entryBeaconId);
-            console.log("accountId=" + $scope.accountId);
+            console.log("entryBeaconId=" + entryBeaconId);
+            console.log("accountId=" + accountId);
             $scope.errMsg = "parkingService/startParking failed with status " + response.status;
         });
     };
     
-    $scope.endParking = function (ticketId) {
+    $scope.endParking = function (exitBeaconId, ticketId) {
         $http({
             method: 'POST',
             url: 'parkingService/endParking',
             params: {
-                "exitBeaconId": $scope.exitBeaconId,
+                "exitBeaconId": exitBeaconId,
                 "ticketId": ticketId
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
@@ -33,8 +33,8 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
         }, function onError(response) {
             console.log(response.status);
             console.log(response.data);
-            console.log("exitBeaconId=" + $scope.exitBeaconId);
-            console.log("ticketId=" + $scope.ticketId);
+            console.log("exitBeaconId=" + exitBeaconId);
+            console.log("ticketId=" + ticketId);
             $scope.errMsg = "parkingService/endParking failed with status " + response.status;
         });
     };
