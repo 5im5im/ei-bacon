@@ -19,13 +19,13 @@ app.controller('parkingServiceRestletCtrl', function ($scope, $http) {
         });
     };
     
-    $scope.endParking = function () {
+    $scope.endParking = function (ticketId) {
         $http({
             method: 'POST',
             url: 'parkingService/endParking',
             params: {
                 "exitBeaconId": $scope.exitBeaconId,
-                "ticketId": $scope.ticketId
+                "ticketId": ticketId
             },
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).then(function onSuccess(response) {
