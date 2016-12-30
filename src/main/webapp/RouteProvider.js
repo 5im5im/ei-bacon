@@ -15,8 +15,8 @@ app.config(function ($routeProvider) {
             .when("/account", {
                 templateUrl: "account/account.html"
             })
-            .when("/admin", {
-                templateUrl: "admin/index.html"
+            .when("/services", {
+                templateUrl: "admin/services.html"
             })
             .otherwise({
                 redirectTo: "/"
