@@ -15,8 +15,10 @@
             </tr>
             <tr ng-show="ticket.parkingFee">
                 <td colspan="2">Parkgebühr:</td>
-                <td colspan="2">{{ticket.parkingFee| currency : 'CHF ' : 2}}</td>
-            </tr>
+				<td ng-if="!ticket.completed" colspan="2">{{ticket.parkingFee| currency : 'CHF ' : 2}}</td>
+				<td ng-if="ticket.completed" colspan="1">{{ticket.parkingFee| currency : 'CHF ' : 2}}</td>
+                <td ng-if="ticket.completed">Bezahlt</td>
+			</tr>
             <tr>
                 <td>Ticket ID:</td>
                 <td>{{ticket.id}}</td>
