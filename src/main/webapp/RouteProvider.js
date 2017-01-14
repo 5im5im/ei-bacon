@@ -12,7 +12,7 @@ app.config(function ($routeProvider) {
             .when("/ausfahrt", {
                 templateUrl: "parking/ausfahrt/ausfahrt.html"
             })
-			.when("/registration", {
+            .when("/registration", {
                 templateUrl: "registration/registration.html"
             })
             .when("/account", {
