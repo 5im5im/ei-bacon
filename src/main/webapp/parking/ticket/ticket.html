@@ -14,7 +14,7 @@
                 <td>{{ticket.parkingEndedAt| date:'HH:mm  dd.MM.yyyy' }}</td>
             </tr>
             <tr ng-show="ticket.parkingFee">
-                <td colspan="2">Parkge&uuml;hr:</td>
+                <td colspan="2">Parkgeb&uuml;hr:</td>
                 <td ng-if="!ticket.completed" colspan="2">{{ticket.parkingFee| currency : 'CHF ' : 2}}</td>
                 <td ng-if="ticket.completed" colspan="1">{{ticket.parkingFee| currency : 'CHF ' : 2}}</td>
                 <td ng-if="ticket.completed">Bezahlt</td>

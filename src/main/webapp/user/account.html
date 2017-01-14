@@ -1,3 +1,13 @@
 <h2>Konto</h2>
 Guthaben zu Ihrer Verf&uuml;gung:<br>
 {{user.saldo| currency : 'CHF ' : 2}}
+
+<script>
+    function pay() {
+        alert("Sie werden zur Zahlungsabwicklung weitergeleitet.");
+    }
+</script>
+
+<div>
+    <button onclick="pay()">20 CHF aufladen</button>
+</div>
